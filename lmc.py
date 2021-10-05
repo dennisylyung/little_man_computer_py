@@ -68,7 +68,7 @@ class LmcImplementation(LittleManComputer):
 
         def parse(self, code: str):
             self.lines = code.split('\n')
-            self.lines = [self.__split_tokens(line) for line in self.lines]
+            self.lines = [self.__split_tokens(line) for line in self.lines if line]
             self.__remove_comments()
             self.__extract_labels()
             return self.__decode_mnemonics()
